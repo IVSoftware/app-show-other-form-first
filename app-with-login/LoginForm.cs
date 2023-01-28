@@ -37,14 +37,12 @@ namespace app_with_login
             try
             {
                 // Looks good to me!
-                UseWaitCursor = true;
                 Cursor= Cursors.WaitCursor;
-                await Task.Delay(5000);
+                await Task.Delay(1000);
                 DialogResult = DialogResult.OK;
             }
             finally
             {
-                UseWaitCursor = false;
                 Cursor = Cursors.Default;
             }
         }
