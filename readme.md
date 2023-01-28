@@ -37,6 +37,7 @@ In the CTor force the creation of the main form `Handle`. This ordinarily happen
         // Provide a means of logging out once the main form shows.
         buttonSignOut.Click += (sender, e) => IsLoggedIn = false;
     }
+    private LoginForm _loginForm = new LoginForm();
 ***
 This way, we can have it both ways and exec a login flow first but _without_ the login form trying to become the main window.
 

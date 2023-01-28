@@ -19,14 +19,16 @@ namespace app_with_login
             // Provide a means of logging out once the main form shows.
             buttonSignOut.Click += (sender, e) => IsLoggedIn = false;
         }
-        private LoginForm _loginForm = new LoginForm();
+        private LoginForm _loginForm = new LoginForm
+        {
+            StartPosition = FormStartPosition.CenterScreen,
+        };
 
         private void execLoginFlow()
         {
             Visible = false;
             while (!IsLoggedIn)
             {
-                _loginForm.StartPosition = FormStartPosition.CenterScreen;
                 if (DialogResult.Cancel == _loginForm.ShowDialog(this))
                 {
                     switch (MessageBox.Show(
